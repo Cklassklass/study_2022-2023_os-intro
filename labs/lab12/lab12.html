@@ -1,0 +1,155 @@
+\begin{frame}{Лабораторная работа №12. Программирование в командом
+процессоре OC UNIX. Командные файлы}
+\protect\phantomsection\label{ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux430ux44f-ux440ux430ux431ux43eux442ux430-12.-ux43fux440ux43eux433ux440ux430ux43cux43cux438ux440ux43eux432ux430ux43dux438ux435-ux432-ux43aux43eux43cux430ux43dux434ux43eux43c-ux43fux440ux43eux446ux435ux441ux441ux43eux440ux435-oc-unix.-ux43aux43eux43cux430ux43dux434ux43dux44bux435-ux444ux430ux439ux43bux44b}
+\begin{block}{Дисциплина: ``Операционные системы.''}
+\protect\phantomsection\label{ux434ux438ux441ux446ux438ux43fux43bux438ux43dux430-ux43eux43fux435ux440ux430ux446ux438ux43eux43dux43dux44bux435-ux441ux438ux441ux442ux435ux43cux44b.}
+\end{block}
+
+\begin{block}{ФИО: Ибрагимов Гаджимурад Шамильевич}
+\protect\phantomsection\label{ux444ux438ux43e-ux438ux431ux440ux430ux433ux438ux43cux43eux432-ux433ux430ux434ux436ux438ux43cux443ux440ux430ux434-ux448ux430ux43cux438ux43bux44cux435ux432ux438ux447}
+\end{block}
+
+\begin{block}{Группа: НКАбд-02-25}
+\protect\phantomsection\label{ux433ux440ux443ux43fux43fux430-ux43dux43aux430ux431ux434-02-25}
+\end{block}
+
+\begin{block}{ID: 1032253512}
+\protect\phantomsection\label{id-1032253512}
+\end{block}
+\end{frame}
+
+\begin{frame}{Цель работы}
+\protect\phantomsection\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+Изучить основы программирования в оболочке ОС UNIX/Linux. Научиться
+писать небольшие командные файлы.
+\end{frame}
+
+\begin{frame}{Задание}
+\protect\phantomsection\label{ux437ux430ux434ux430ux43dux438ux435}
+\begin{enumerate}
+[1)]
+\item
+  Написать скрипт, который при запуске будет делать резервную копию
+  самого себя (то есть файла, в котором содержится его исходный код) в
+  другую директорию backup в вашем домашнем каталоге. При этом файл
+  должен архивироваться одним из архиваторов на выбор zip, bzip2 или
+  tar. Способ использования команд архивации необходимо узнать, изучив
+  справку.
+\item
+  Написать пример командного файла, обрабатывающего любое произвольное
+  число аргументов командной строки, в том числе превышающее десять.
+  Например, скрипт может последовательно распечатывать значения всех
+  переданных аргументов.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+[1)]
+\setcounter{enumi}{2}
+\item
+  Написать командный файл --- аналог команды ls (без использования самой
+  этой команды и команды dir). Требуется, чтобы он выдавал информацию о
+  нужном каталоге и выводил информацию о возможностях доступа к файлам
+  этого каталога.
+\item
+  Написать командный файл, который получает в качестве аргумента
+  командной строки формат файла (.txt, .doc, .jpg, .pdf и т.д.) и
+  вычисляет количество таких файлов в указанной директории. Путь к
+  директории также передаётся в виде аргумента командной строки.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Теоретическое введение}
+\protect\phantomsection\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux43eux435-ux432ux432ux435ux434ux435ux43dux438ux435}
+\textbf{Командный процессор (shell)} --- программа, обеспечивающая
+взаимодействие пользователя с операционной системой. В UNIX/Linux
+распространены следующие оболочки:
+
+\begin{itemize}
+\item
+  \textbf{Bourne shell (sh)} --- базовая оболочка UNIX;
+\item
+  \textbf{C shell (csh)} --- с синтаксисом, похожим на язык C;
+\item
+  \textbf{Korn shell (ksh)} --- сочетает возможности sh и csh;
+\item
+  \textbf{Bash (Bourne Again Shell)} --- наиболее популярная современная
+  оболочка.
+\end{itemize}
+
+\textbf{Командный файл (скрипт)} --- текстовый файл с
+последовательностью команд для shell, который можно выполнить как единую
+программу.
+\end{frame}
+
+\begin{frame}{Выполнение лабораторной работы}
+\protect\phantomsection\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+\begin{block}{1-ое задание}
+\protect\phantomsection\label{ux43eux435-ux437ux430ux434ux430ux43dux438ux435}
+Код программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-11-39-04-image.png}}
+\end{block}
+\end{frame}
+
+\begin{frame}
+Результат программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-11-40-18-image.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-11-40-41-image.png}}
+\end{frame}
+
+\begin{frame}
+\begin{block}{2-ое задание}
+\protect\phantomsection\label{ux43eux435-ux437ux430ux434ux430ux43dux438ux435-1}
+Код программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-11-51-37-image.png}}
+\end{block}
+\end{frame}
+
+\begin{frame}
+Результат программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-11-56-41-image.png}}
+\end{frame}
+
+\begin{frame}
+\begin{block}{3-ое задание}
+\protect\phantomsection\label{ux43eux435-ux437ux430ux434ux430ux43dux438ux435-2}
+Код программы:
+\end{block}
+\end{frame}
+
+\begin{frame}
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-12-22-22-image.png}}
+\end{frame}
+
+\begin{frame}
+Результат программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-12-21-12-image.png}}
+\end{frame}
+
+\begin{frame}
+\begin{block}{4-ое задание}
+\protect\phantomsection\label{ux43eux435-ux437ux430ux434ux430ux43dux438ux435-3}
+Код программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-12-36-51-image.png}}
+\end{block}
+\end{frame}
+
+\begin{frame}
+Результат программы:
+
+\pandocbounded{\includegraphics[keepaspectratio]{/home/gkibragimov/snap/marktext/9/.config/marktext/images/2026-05-02-12-37-18-image.png}}
+\end{frame}
+
+\begin{frame}{Выводы}
+\protect\phantomsection\label{ux432ux44bux432ux43eux434ux44b}
+В ходе выполнения данной лабораторной работы я научился программировать
+в оболочке OC Linux. Освоил базовые инуструменты написания скриптов.
+\end{frame}
